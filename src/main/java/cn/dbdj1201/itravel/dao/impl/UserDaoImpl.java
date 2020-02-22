@@ -46,7 +46,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     /**
-     *
      * @param username 用户名
      * @param password 密码
      * @return
@@ -61,6 +60,32 @@ public class UserDaoImpl implements UserDao {
             return null;
         }
         return user;
+    }
+
+    /**
+     * 根据激活码找到用户
+     * @param code 激活码
+     * @return 返回相应用户
+     */
+    @Override
+    public User findByCode(String code) {
+        User user;
+        try {
+            user = template.queryForObject("select * from tab_user where code = ?",
+                    new BeanPropertyRowMapper<>(User.class), code);
+        } catch (DataAccessException e) {
+            return null;
+        }
+        return user;
+    }
+
+    /**
+     * 修改指定用户的激活状态
+     * @param user
+     */
+    @Override
+    public void updateStatus(User user) {
+        template.update("update tab_user set status = 'Y' where uid = ?" + user.getUid());
     }
 
 }

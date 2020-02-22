@@ -14,7 +14,9 @@ import java.io.IOException;
 @WebServlet("/exitServlet")
 public class ExitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().removeAttribute("user"); //从session中删除已经保存的user信息
 
+        response.sendRedirect(request.getContextPath() + "/login"); //重定向到登录页面
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
