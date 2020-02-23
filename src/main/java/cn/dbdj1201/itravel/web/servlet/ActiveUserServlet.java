@@ -27,7 +27,7 @@ public class ActiveUserServlet extends HttpServlet {
             boolean flag = service.active(code);
 
             //3.判断标记
-            String msg = null;
+            String msg;
             if(flag){
                 //激活成功
                 msg = "激活成功，请<a href='login.html'>登录</a>";

@@ -8,7 +8,11 @@ cn\dbdj1201\itravel\web\servlet\RegisterServlet.class
 cn\dbdj1201\itravel\util\JedisUtil.class
 cn\dbdj1201\itravel\service\UserService.class
 cn\dbdj1201\itravel\service\impl\UserServiceImpl.class
+cn\dbdj1201\itravel\web\servlet\ActiveUserServlet.class
 cn\dbdj1201\itravel\web\servlet\CheckCodeServlet.class
+cn\dbdj1201\itravel\web\servlet\LoginServlet.class
+cn\dbdj1201\itravel\web\servlet\FindUserServlet.class
 cn\dbdj1201\itravel\dao\impl\UserDaoImpl.class
 cn\dbdj1201\itravel\domain\ResultInfo.class
+cn\dbdj1201\itravel\web\servlet\ExitServlet.class
 cn\dbdj1201\itravel\util\UuidUtil.class

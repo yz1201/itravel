@@ -20,7 +20,7 @@ import java.lang.reflect.InvocationTargetException;
  * @author tyz1201
  * @datetime 2020-02-23 1:23
  **/
-@WebServlet("/login")
+@WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");

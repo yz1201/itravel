@@ -27,7 +27,7 @@
             const username = $("#username");
             const usernameValue = username.val();
             //2.定义正则
-            const reg_username = /^\w{8,20}$/;
+            const reg_username = /^\w{4,12}$/;
 
             //3.判断，给出提示信息
             const flag = reg_username.test(usernameValue);
@@ -81,6 +81,66 @@
             return flag;
         }
 
+        function checkTelephone() {
+            //1.获取手机号
+            const telephone = $("#telephone");
+            const telephoneValue = telephone.val();
+            //2.定义正则		必须11位手机号
+            const reg_telephone = /^\d{11}$/;
+
+            //3.判断  （绑定手机来一套？）
+            const flag = reg_telephone.test(telephoneValue);
+            if (flag) {
+                telephone.css("border", "");
+            } else {
+                telephone.css("border", "1px solid red");
+            }
+            return flag;
+        }
+
+        //检查非空
+        function checkName() {
+            const name = $("#name");
+            const nameValue = name.val();
+            const str = nameValue.replace(/(^\s*)|(\s*$)/g, '');//去除空格;
+
+            if (str === '' || str === undefined || str == null) {
+                name.css("border", "1px red solid");
+                return false;
+            } else {
+                name.css("border", "");
+                return true;
+            }
+        }
+
+        function checkBirthday() {
+            const birthday = $("#birthday");
+            const birthdayValue = birthday.val();
+            const str = birthdayValue.replace(/(^\s*)|(\s*$)/g, '');//去除空格;
+            if (str == null || str === '' || str === undefined) {
+                birthday.css("border", "1px red solid");
+                return false;
+            } else {
+                birthday.css("border", "");
+                return true;
+            }
+
+        }
+
+        function checkCheckCode() {
+            const check = $("#check");
+            const checkValue = check.val();
+            const str = checkValue.replace(/(^\s*)|(\s*$)/g, '');//去除空格;
+            if (str == null || str === '' || str === undefined) {
+                check.css("border", "1px red solid");
+                return false;
+            } else {
+                check.css("border", "");
+                return true;
+            }
+
+        }
+
         //图片点击事件
         function changeCheckCode(img) {
             img.src = "checkCode?" + new Date().getTime();
@@ -90,8 +150,12 @@
         $(function () {
             //当表单提交时，调用所有的校验方法
             $("#registerForm").submit(function () {
+
+                // changeCheckCode($("#img_check")); //提交时先改验证码图片。
+                $("#img_check").prop("src", "checkCode?" + new Date().getTime());
                 //1.发送数据到服务器
-                if (checkUsername() && checkPassword() && checkEmail()) {
+                if (checkUsername() && checkPassword() && checkEmail() &&
+                    checkTelephone() && checkBirthday() && checkName() && checkCheckCode()) {
                     //校验通过,发送ajax请求，提交表单的数据   username=zhangsan&password=123
 
                     $.post("registerUser", $(this).serialize(), function (data) {
@@ -103,7 +167,7 @@
                         } else {
                             //注册失败,给errorMsg添加提示信息
                             $("#errorMsg").html(data.errorMsg);
-                            changeCheckCode($("#img_check"));
+
                         }
                     });
 
@@ -117,10 +181,11 @@
             $("#username").blur(checkUsername);
             $("#password").blur(checkPassword);
             $("#email").blur(checkEmail);
-
-
+            $("#telephone").blur(checkTelephone);
+            $("#name").blur(checkName);
+            $("#birthday").blur(checkBirthday);
+            $("#check").blur(checkCheckCode);
         });
-
 
     </script>
 

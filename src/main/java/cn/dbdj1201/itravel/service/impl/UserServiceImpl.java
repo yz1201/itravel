@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
             String content = "<a href='http://localhost/itravel/activeUserServlet?code=" + user.getCode()
                     + "'>点击激活【黑马旅游网】</a>";
             MailUtils.sendMail(user.getEmail(), content, "激活邮件");
-//            dao.save(user);
             return true;
         }
         return false;

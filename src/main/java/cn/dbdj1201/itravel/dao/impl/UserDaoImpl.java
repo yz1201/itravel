@@ -64,6 +64,7 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * 根据激活码找到用户
+     *
      * @param code 激活码
      * @return 返回相应用户
      */
@@ -81,11 +82,12 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * 修改指定用户的激活状态
+     *
      * @param user
      */
     @Override
     public void updateStatus(User user) {
-        template.update("update tab_user set status = 'Y' where uid = ?" + user.getUid());
+        template.update("update tab_user set status = 'Y' where uid = ?", user.getUid());
     }
 
 }
