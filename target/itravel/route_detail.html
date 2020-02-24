@@ -133,7 +133,7 @@
             }
         });
         $('.up_img').on('click',function(){
-            var num = $('.little_img').length;
+            const num = $('.little_img').length;
             if(picindex > 0){
                 $('.little_img:eq('+(nextindex-1)+')').hide();
                 $('.little_img:eq('+(picindex-1)+')').show();

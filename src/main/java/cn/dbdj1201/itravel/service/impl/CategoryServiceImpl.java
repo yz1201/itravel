@@ -35,9 +35,10 @@ public class CategoryServiceImpl implements CategoryService {
                 }
             });
         } else {
+            System.out.println("come from jedis / redis");
             for (int i = 0; i < length; i++) {
                 try {
-                    categories.add(new ObjectMapper().readValue(jedis.lpop("categories"), Category.class));
+                    categories.add(new ObjectMapper().readValue(jedis.lindex("categories", i), Category.class));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

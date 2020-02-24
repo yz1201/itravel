@@ -13,6 +13,6 @@ public class CategoryServiceImplTest {
     @Test
     public void findAll() {
         CategoryServiceImpl service = new CategoryServiceImpl();
-        System.out.println(service.findAll());
+        service.findAll().forEach(System.out::println);
     }
 }

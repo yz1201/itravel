@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="6.678" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="0" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="F:\data\java-se-9-ri\jdk-9\bin"/>
-    <property name="sun.java.command" value="C:\Users\Administrator\AppData\Local\Temp\surefire6517714027925776966\surefirebooter10513784702291458525.jar C:\Users\Administrator\AppData\Local\Temp\surefire6517714027925776966 2020-02-23T17-34-25_873-jvmRun1 surefire15642178404561317690tmp surefire_03214238117946875307tmp"/>
+    <property name="sun.java.command" value="C:\Users\Administrator\AppData\Local\Temp\surefire14139318467220336033\surefirebooter13269783032798757180.jar C:\Users\Administrator\AppData\Local\Temp\surefire14139318467220336033 2020-02-24T17-39-39_609-jvmRun1 surefire4868324027429476967tmp surefire_011477211458605975848tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="F:\maven_project\itravel\target\test-classes;F:\maven_project\itravel\target\classes;F:\tools\repo_mine\junit\junit\4.12\junit-4.12.jar;F:\tools\repo_mine\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;F:\tools\repo_mine\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;F:\tools\repo_mine\mysql\mysql-connector-java\5.1.26\mysql-connector-java-5.1.26.jar;F:\tools\repo_mine\com\alibaba\druid\1.0.9\druid-1.0.9.jar;F:\tools\repo_mine\org\springframework\spring-core\5.0.2.RELEASE\spring-core-5.0.2.RELEASE.jar;F:\tools\repo_mine\org\springframework\spring-jcl\5.0.2.RELEASE\spring-jcl-5.0.2.RELEASE.jar;F:\tools\repo_mine\org\springframework\spring-jdbc\5.0.2.RELEASE\spring-jdbc-5.0.2.RELEASE.jar;F:\tools\repo_mine\org\springframework\spring-tx\5.0.2.RELEASE\spring-tx-5.0.2.RELEASE.jar;F:\tools\repo_mine\org\springframework\spring-beans\5.0.2.RELEASE\spring-beans-5.0.2.RELEASE.jar;F:\tools\repo_mine\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;F:\tools\repo_mine\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;F:\tools\repo_mine\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;F:\tools\repo_mine\com\fasterxml\jackson\core\jackson-databind\2.3.3\jackson-databind-2.3.3.jar;F:\tools\repo_mine\com\fasterxml\jackson\core\jackson-core\2.3.3\jackson-core-2.3.3.jar;F:\tools\repo_mine\com\fasterxml\jackson\core\jackson-annotations\2.3.3\jackson-annotations-2.3.3.jar;F:\tools\repo_mine\javax\mail\javax.mail-api\1.5.6\javax.mail-api-1.5.6.jar;F:\tools\repo_mine\com\sun\mail\javax.mail\1.5.3\javax.mail-1.5.3.jar;F:\tools\repo_mine\javax\activation\activation\1.1\activation-1.1.jar;F:\tools\repo_mine\redis\clients\jedis\2.7.0\jedis-2.7.0.jar;F:\tools\repo_mine\org\apache\commons\commons-pool2\2.3\commons-pool2-2.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Administrator\AppData\Local\Temp\surefire6517714027925776966\surefirebooter10513784702291458525.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Administrator\AppData\Local\Temp\surefire14139318467220336033\surefirebooter13269783032798757180.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="9+181"/>
@@ -61,6 +61,6 @@
     <property name="maven.repo.local" value="F:\tools\repo_mine"/>
     <property name="java.class.version" value="53.0"/>
   </properties>
-  <testcase name="save" classname="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="0.003"/>
-  <testcase name="findByUsername" classname="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="6.594"/>
+  <testcase name="save" classname="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="0"/>
+  <testcase name="findByUsername" classname="cn.dbdj1201.itravel.dao.impl.UserDaoImplTest" time="0"/>
 </testsuite>
