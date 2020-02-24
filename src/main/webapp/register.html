@@ -151,16 +151,13 @@
             //当表单提交时，调用所有的校验方法
             $("#registerForm").submit(function () {
 
-                // changeCheckCode($("#img_check")); //提交时先改验证码图片。
-                $("#img_check").prop("src", "checkCode?" + new Date().getTime());
                 //1.发送数据到服务器
                 if (checkUsername() && checkPassword() && checkEmail() &&
                     checkTelephone() && checkBirthday() && checkName() && checkCheckCode()) {
                     //校验通过,发送ajax请求，提交表单的数据   username=zhangsan&password=123
 
-                    $.post("registerUser", $(this).serialize(), function (data) {
+                    $.post("user/register", $(this).serialize(), function (data) {
                         //处理服务器响应的数据  data  {flag:true,errorMsg:"注册失败"}
-
                         if (data.flag) {
                             //注册成功，跳转成功页面
                             location.href = "register_ok.html";
@@ -172,6 +169,9 @@
                     });
 
                 }
+
+                $("#img_check").prop("src", "checkCode?" + new Date().getTime());//注册校验后立即换图片
+
                 //2.不让页面跳转
                 return false;
                 //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
