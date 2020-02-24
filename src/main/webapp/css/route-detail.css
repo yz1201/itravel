@@ -53,8 +53,7 @@
 }
 
 .prosum_box .prosum_left .up_img {
-    background: url("../images/arrows.jpg") no-repeat;
-    background-position: 0px -20px;
+    background: url("../images/arrows.jpg") no-repeat 0 -20px;
 }
 
 .prosum_box .prosum_left .up_img_disable {

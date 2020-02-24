@@ -150,8 +150,7 @@ public class UserServlet extends BaseServlet {
      */
     public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user"); //从session中获取已保存的用户
-        response.setContentType("application/json;charset=utf-8");
-        new ObjectMapper().writeValue(response.getWriter(), user);          //回写给客户端。
+        writeValue(user, response);      //回写给客户端。
     }
 
     /**

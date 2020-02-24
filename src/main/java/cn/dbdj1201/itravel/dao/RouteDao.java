@@ -10,11 +10,30 @@ import java.util.List;
  **/
 public interface RouteDao {
     /**
-     * 根据分类查找路线。
-     *
+     * @param cid      所属分类
+     * @param start    当前页开始记录数
+     * @param pageSize 当前页码记录数
+     * @param rname    路线名称
+     * @return 符合条件的路线集合
+     */
+    List<Route> findByPage(int cid, int start, int pageSize, String rname);
+
+    /**
+     * @param cid   所属分类
+     * @param rname 路线名称
+     * @return 符合条件的记录数
+     */
+    int findTotalCount(int cid, String rname);
+
+    /**
+     * @param rid 路线id
+     * @return 该id的路线信息
+     */
+    Route findByRid(int rid);
+
+    /**
+     * @param start
      * @return
      */
-    List<Route> findByPage(int cid, int start, int pageSize);
-
-    int findTotalCount(int cid);
+    List<Route> findPageForFavorite(int start);
 }

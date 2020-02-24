@@ -13,12 +13,12 @@ public class RouteDaoImplTest {
 
     @Test
     public void findByPage() {
-        RouteDaoImpl dao = new RouteDaoImpl();
-        dao.findByPage(5, 1, 100).forEach(System.out::println);
+//        RouteDaoImpl dao = new RouteDaoImpl();
+//        dao.findByPage(5, 1, 100).forEach(System.out::println);
     }
 
     @Test
     public void findTotalCount() {
-        System.out.println(new RouteDaoImpl().findTotalCount(5));
+//        System.out.println(new RouteDaoImpl().findTotalCount(5));
     }
 }

@@ -1,12 +1,8 @@
 <!-- 头部 start -->
+
+<script src="js/getParameter.js"></script>
 <script>
     $(function () {
-        $.get("user/findOne", function (data) {
-            //{uid:1,name:'李四'}
-            const msg = "欢迎回来，" + data.name;
-            $("#span_username").html(msg);
-
-        });
 
         $.get("category/findAll", {}, function (data) {
             let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
@@ -21,6 +17,33 @@
             //将lis字符串，设置到ul的html内容中
             $("#category").html(lis);
         });
+
+        $("#search-button").click(function () {
+            const rname = $("#search_input").val();
+            location.href = "http://localhost/itravel/route_list.html?cid=" + getParameter("cid") + "&rname=" + rname;
+        });
+
+        $(function () {
+            $.get("user/findOne", {}, function (user) {
+                console.log(user);
+                if (user) {
+                    $("#shortcut").html('  <div class="login">\n' +
+                        '            <span id="span_username"></span>\n' +
+                        '            <a href="myfavorite.html?uid=' + user.uid + '" class="collection">我的收藏</a>\n' +
+                        '            <a href="javascript:location.href=\'exitServlet\';">退出</a>\n' +
+                        '        </div> ');
+                    const msg = "欢迎回来，" + user.name;
+                    $("#span_username").html(msg);
+                } else {
+                    $("#shortcut").html(' <div class="login_out">\n' +
+                        '            <a href="login.html">登录</a>\n' +
+                        '            <a href="register.html">注册</a>\n' +
+                        '        </div> ');
+                }
+
+            });
+        });
+
     });
 
 </script>
@@ -29,7 +52,7 @@
     <div class="top_banner">
         <img src="images/top_banner.jpg" alt="">
     </div>
-    <div class="shortcut">
+    <div class="shortcut" id="shortcut">
         <!-- 未登录状态  -->
         <div class="login_out">
             <a href="login.html">登录</a>
@@ -37,9 +60,8 @@
         </div>
         <!-- 登录状态  -->
         <div class="login">
-
             <span id="span_username"></span>
-            <a href="myfavorite.html" class="collection">我的收藏</a>
+            <a href="myfavorite.html?uid=" class="collection">我的收藏</a>
             <a href="javascript:location.href='exitServlet';">退出</a>
         </div>
     </div>
@@ -49,8 +71,9 @@
                 <a href="/"><img src="images/logo.jpg" alt=""></a>
             </div>
             <div class="search">
-                <input name="" type="text" placeholder="请输入路线名称" class="search_input" autocomplete="off">
-                <a href="javascript:;" class="search-button">搜索</a>
+                <input name="" id="search_input" type="text" placeholder="请输入路线名称" class="search_input"
+                       autocomplete="off">
+                <a href="javascript:;" id="search-button" class="search-button">搜索</a>
             </div>
             <div class="hottel">
                 <div class="hot_pic">
