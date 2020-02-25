@@ -32,8 +32,8 @@ public interface RouteDao {
     Route findByRid(int rid);
 
     /**
-     * @param start
+     * @param rids  需要查询查询的路线集
      * @return
      */
-    List<Route> findPageForFavorite(int start);
+//    List<Route> findPageForFavorite(List<Integer> rids);
 }

@@ -25,4 +25,9 @@ public class RouteServiceImplTest {
         System.out.println(service.findOne(1));
     }
 
+    @Test
+    public void pageQueryForFavorite() {
+        RouteServiceImpl routeService = new RouteServiceImpl();
+        System.out.println(routeService.pageQueryForFavorite(1, 9));
+    }
 }

@@ -21,6 +21,8 @@ public class FavoriteServiceImpl implements FavoriteService {
         return dao.findByRidAndUid(rid, uid) != null;
     }
 
+
+
     @Override
     public void add(int rid, int uid) {
         dao.add(rid, uid);

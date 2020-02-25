@@ -77,10 +77,15 @@ public class RouteDaoImpl implements RouteDao {
         return route;
     }
 
-    @Override
-    public List<Route> findPageForFavorite(int start) {
-
-        String sql = "select * from tab_route where rid = ?";
-        return null;
-    }
+//    @Override
+//    public List<Route> findPageForFavorite(List<Integer> rids) {
+//        String sql = "select * from tab_route where 1 = 1 ";
+//        int size = rids.size();
+//        StringBuilder sb = new StringBuilder(sql);
+//        for (int i = 0; i <size ; i++) {
+//            sb.append(" and rid")
+//        }
+//
+//        return null;
+//    }
 }

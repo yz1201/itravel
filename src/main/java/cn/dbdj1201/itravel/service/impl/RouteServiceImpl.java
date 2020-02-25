@@ -61,24 +61,52 @@ public class RouteServiceImpl implements RouteService {
     }
 
     /**
+     * 我的收藏分页查询
+     *
      * @param uid
      * @param currentPage
      * @return
      */
     @Override
     public PageBean<Route> pageQueryForFavorite(int uid, int currentPage) {
-        List<Integer> rids = favoriteDao.findRidByUid(uid);
+        List<Integer> rids = favoriteDao.findRidByUid(uid); //用户收藏的路线编号集
         PageBean<Route> pb = new PageBean<>();
-
+        List<Route> routeList = new ArrayList<>();
         if (rids != null) {
             int totalCount = rids.size();
+            int totalPage = totalCount % 12 == 0 ? totalCount / 12 : ((totalCount / 12) + 1);
             pb.setCurrentPage(currentPage);
             pb.setTotalCount(totalCount);
-            pb.setTotalPage(totalCount % 12 == 0 ? totalCount / 12 : (totalCount / 12) + 1);
+            pb.setTotalPage(totalPage);
             pb.setPageSize(12);
-            pb.setList(routeDao.findPageForFavorite((currentPage - 1) * 12));
+            rids = getWordRouteIds(currentPage, rids);
+            for (Integer rid : rids) {
+                routeList.add(routeDao.findByRid(rid));
+            }
+            pb.setList(routeList);
             return pb;
         }
         return null;
+    }
+
+
+    /**
+     * 拿到当前页码的收藏路线id集
+     *
+     * @param currentPage
+     * @param rids
+     * @return
+     */
+    public List<Integer> getWordRouteIds(int currentPage, List<Integer> rids) {
+        int begin = (currentPage - 1) * 12;   //rids 集合开始
+        int end = begin + 12; // 每次拉取12个
+        int size = rids.size();
+        List<Integer> workRouteRids;
+        if (end > size) {
+            workRouteRids = rids.subList(begin, size);
+        } else {
+            workRouteRids = rids.subList(begin, end);
+        }
+        return workRouteRids;
     }
 }
