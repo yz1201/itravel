@@ -3,3 +3,4 @@ cn\dbdj1201\itravel\dao\impl\CategoryDaoImplTest.class
 cn\dbdj1201\itravel\dao\impl\UserDaoImplTest.class
 cn\dbdj1201\itravel\service\impl\RouteServiceImplTest.class
 cn\dbdj1201\itravel\dao\impl\RouteDaoImplTest.class
+cn\dbdj1201\itravel\service\impl\FavoriteServiceImplTest.class

@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
@@ -43,8 +44,10 @@ public class RouteServlet extends BaseServlet {
 
         //接受rname 线路名称
         String rname = request.getParameter("rname");
+
         if (rname != null)
-            rname = new String(rname.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            rname = URLDecoder.decode(rname, StandardCharsets.UTF_8);
+//            rname = new String(rname.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
         System.out.println("rname = " + rname);
 

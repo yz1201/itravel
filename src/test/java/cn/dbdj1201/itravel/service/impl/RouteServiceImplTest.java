@@ -12,11 +12,11 @@ public class RouteServiceImplTest {
 
     @Test
     public void pageQuery() {
-//        RouteServiceImpl service = new RouteServiceImpl();
-//        for (int i = 1; i <= 10; i++) {
-//            System.out.println("page-->" + i);
-//            service.pageQuery(5, i, 10).getList().forEach(System.out::println);
-//        }
+        RouteServiceImpl service = new RouteServiceImpl();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("page-->" + i);
+            service.pageQuery(5, i, 10,"北京").getList().forEach(System.out::println);
+        }
     }
 
     @Test
@@ -25,9 +25,9 @@ public class RouteServiceImplTest {
         System.out.println(service.findOne(1));
     }
 
-    @Test
-    public void pageQueryForFavorite() {
-        RouteServiceImpl routeService = new RouteServiceImpl();
-        System.out.println(routeService.pageQueryForFavorite(1, 9));
-    }
+//    @Test
+//    public void pageQueryForFavorite() {
+//        RouteServiceImpl routeService = new RouteServiceImpl();
+//        System.out.println(routeService.pageQueryForFavorite(1, 9));
+//    }
 }

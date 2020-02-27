@@ -15,11 +15,11 @@ public class FavoriteServiceImplTest {
     public void isFavorite() {
     }
 
-    @Test
-    public void add() {
-        FavoriteDaoImpl favoriteDao = new FavoriteDaoImpl();
-        for (int i = 1; i < 100; i++) {
-            favoriteDao.add(i, 1);
-        }
-    }
+//    @Test
+//    public void add() {
+//        FavoriteDaoImpl favoriteDao = new FavoriteDaoImpl();
+//        for (int i = 1; i < 100; i++) {
+//            favoriteDao.add(i, 1);
+//        }
+//    }
 }
