@@ -23,6 +23,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> findAll() {
         Jedis jedis = JedisUtil.getJedis();
+        jedis.auth("redis");
         List<Category> categories = new ArrayList<>();
         Long length = jedis.llen("categories");
         if (length < 1) {

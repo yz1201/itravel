@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [26/Jul/2020:20:20:30 +0800] "GET /itravel HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [26/Jul/2020:20:20:32 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [26/Jul/2020:20:20:33 +0800] "GET /itravel/user/findOne HTTP/1.1" 200 4 http-bio-8080-exec-5 578
+0:0:0:0:0:0:0:1 - - [26/Jul/2020:20:20:34 +0800] "GET /itravel/category/findAll HTTP/1.1" 200 - http-bio-8080-exec-4 1776
