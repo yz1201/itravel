@@ -25,6 +25,10 @@ public class UserDaoImplTest {
         UserDaoImpl userDao = new UserDaoImpl();
         User user = userDao.findByUsername("root");
         System.out.println("user-->" + user);
+//        User user1 = new User();
+//        user1.setUsername("root");
+//        user1.setPassword("root");
+//        userDao.save(user1);
     }
 
     @Test
